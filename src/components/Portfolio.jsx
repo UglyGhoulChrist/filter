@@ -19,11 +19,13 @@ export default class Portfolio extends Component {
           }}
         />
         <ProjectList
-          projects={projects.filter(
-            (project) =>
-              this.state.selected === "All" ||
-              project.category === this.state.selected
-          )}
+          projects={
+            this.state.selected === "All"
+              ? projects
+              : projects.filter(
+                  (project) => project.category === this.state.selected
+                )
+          }
         />
       </>
     );
